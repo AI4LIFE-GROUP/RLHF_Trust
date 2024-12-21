@@ -40,7 +40,7 @@ if __name__ == '__main__':
     n_generations = 5
 
     # Models to be evaluated
-    model_names = []
+    model_names = [...]
 
     for k in range(len(model_names)):
         model_name =  model_names[k]

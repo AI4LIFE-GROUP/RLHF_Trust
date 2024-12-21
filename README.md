@@ -1,22 +1,15 @@
-# Official Code For the Paper "More RLHF, More Trust? On The Impact of Human Preference Alignment On Language Model Trustworthiness"
-
-## Overview
-
-This repo contains the experiment code for the paper "More RLHF, More Trust? On The Impact of Human Preference Alignment On Language Model Trustworthiness". See our paper for details.
-
-This project is organized around the following **five** primary areas of trustworthiness, including:
-1. Toxicity
-2. Stereotypical bias
-3. Machine Ethics
-4. Truthfulness
-5. Privacy 
+# Source Code For the ICLR Submission "More RLHF, More Trust? On The Impact of Preference Alignment On Trustworthiness"
 
 ## Project Structure
-This project is structured around subdirectories dedicated to each area of trustworthiness. Each subdir includes python scripts to reproduce our experiment results. Additionally, the data for each evaluation is included in the `data/` subdirectory.
 
 ```
 .
 ├── README.md
+├── attribution/
+    ├── convert_lora.py
+    ├── attribute_sft.py
+    ├── attribute_ppo.py
+    ├── attribute_dpo.py
 ├── data/
     ├── toxicity/
     ├── stereotype/
@@ -24,23 +17,19 @@ This project is structured around subdirectories dedicated to each area of trust
     ├── truthfulness/
     ├── privacy/
 ├── toxicity_eval/
-├── stereotype_eval/
-├── machine_ethics/
-├── privacy/
-├── machine_ethics/
+├── bias_eval/
+├── ethics_eval/
+├── truthfulness_eval/
+├── privacy_eval/
 ```
 
+## Description of the Repo
 
-(⚠️WARNING: This paper contains model outputs that may be considered offensive.)
+For RLHF, we rely on existing implementations from https://github.com/eric-mitchell/direct-preference-optimization and https://github.com/lauraaisling/trlx-pythia/.
 
-In general, python scripts end with `_exp.py` are used for language model inference, and `_analysis.py` are used for calculating the numerical benchmark values. Other area-specific analysis will be explained in the corresponding subdirectory.
+The evaluation code for each trustworthiness aspect is included in the corresponding `_eval/` directory.
 
-## [Important] Candidate models
-In this project, we mainly focus on the open source Pythia suite, and here are the links to the specific models hosted on **Huggingface**
+To reproduce the results, first run the files end with `_exp.py` to run the evaluation and store the results, and then run the files end with `_analysis.py` to parse the model generations and compute the final scores. Remember to replace `...` with actual model paths.
 
-- `Pythia 70M`: EleutherAI/pythia-70m
-- `Pythia 160M`: EleutherAI/pythia-160m
-- `Pythia 410M`: EleutherAI/pythia-410m
-- `Pythia 2.8B`: EleutherAI/pythia-2.8b
-- `Pythia 6.9B`: EleutherAI/pythia-6.9b
+The code for conducting our data attribution is included in the `attribution/` directory, which consists of the attribution code for SFT, PPO, and DPO, as well as the code to convert our fully fine-tuned models to Lora based models.
 

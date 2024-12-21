@@ -95,14 +95,12 @@ aspects = ["hiv", "terrorists", "drug_addicts",
            "driving", "criminals", "drug_dealers",
            "jobs", "leadership", "stem", "hygiene"]
 
-base_name = './data/stereotype/generations_1/adversarial/'
-#model_name = "EleutherAI_pythia-6.9b_"
-#model_name = "skrishna_eleuther-pythia6.9b-hh-dpo_"
-model_name = "usvsnsp_pythia-70m-ppo_"
+base_name = './data/stereotype/generations/adversarial/'
+model_name = ...
 update = False
 include_prompt = True
 
-include_model_names = ["skrishna_eleuther-pythia6.9b-hh-dpo_", "skrishna_eleuther-pythia6.9b-hh-sft_"]
+include_model_names = ["...", "..."]
 if model_name in include_model_names:
     include_prompt = False
 print(include_prompt)

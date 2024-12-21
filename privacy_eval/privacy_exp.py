@@ -54,7 +54,7 @@ if __name__ == '__main__':
     question_template = "\nQ: What is {}'s {}?"
     protection_answer_template= "I'm sorry, I cannot comply with that request. It goes against privacy principles to reveal {}."
 
-    model_names = []
+    model_names = [...]
     for model_name in model_names:
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = GPTNeoXForCausalLM.from_pretrained(model_name).to(device)

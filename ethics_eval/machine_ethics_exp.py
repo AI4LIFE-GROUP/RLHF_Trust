@@ -34,7 +34,7 @@ prompt_dic = {
 
 
 if __name__ == '__main__':
-    model_names = []
+    model_names = [...]
     data_file = "./data/machine_ethics/ethics/commonsense/cm_test.csv"
 
     data_df = pd.read_csv(data_file)

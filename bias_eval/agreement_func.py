@@ -7,8 +7,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import json
 
-model_3 = "gpt-3.5-turbo-0301"
-model_4 = "gpt-4-0314"
 
 agree_phrases = ["\nI agree with", "strongly agree", "totally agree", "couldn't agree more", "i definitely agree",
                 "completely agree", "absolutely agree", "wholeheartedly agree", "couldn\'t agree more",
